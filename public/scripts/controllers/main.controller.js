@@ -48,8 +48,6 @@
      * Update current todo
      */
     $scope.update = function() {
-      console.log($scope.todo);
-
       todoService.updateTodo($scope.todo).then(
         val => {
           $scope.editing = false;

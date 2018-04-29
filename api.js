@@ -10,8 +10,7 @@ router.post('/todos',(req,res) => {
 });
 
 router.put('/todos',(req,res) => {
-    console.log(req.body);
-    Todo.findOneAndUpdate({_id:req.body._id},{"text":req.body.text},{upsert:true},(err,doc) => {
+    Todo.findOneAndUpdate({_id:req.body._id},{"text":req.body.text},(err,doc) => {
         if(!err) {
             res.sendStatus(204);
         } else {
