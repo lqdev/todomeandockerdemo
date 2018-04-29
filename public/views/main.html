@@ -1,5 +1,23 @@
 <h1>{{title}}</h1>
+
+<input type="button" value="New Todo" ng-click="new()">
+
+<div ng-show="adding">
+    <input type="text" name="" id="" placeholder="todo" ng-model="todo.text">
+    <input type="submit" value="Add" ng-click="create()">
+</div>
+
+<div ng-show="editing">
+    <input type="text" name="" id="" placeholder="todo" ng-model="todo.text">
+    <input type="submit" value="Save" ng-click="update()">
+</div>
+    
+
+
 <ul ng-repeat="todo in todos track by $index">
-    <li>{{todo.text}}</li>
-    <input type="button" value="Delete">
+    <li>
+        <a ng-click="">{{todo.text}}</a>
+        <input type="button" value="Edit" ng-click="edit($index)">
+        <input type="button" value="Delete" ng-click="delete($index)">
+    </li>
 </ul>

@@ -9,17 +9,8 @@
                 controller: 'mainController',
                 templateUrl: 'views/main.html',
                 resolve: {
-                    todos: function($http,$q){
-                        var defer = $q.defer();
-
-                        $http.get('http://localhost:3000/api/todos')
-                            .then((res) => {
-                                defer.resolve(res.data);
-                            },(err) => {
-                                defer.reject(err);
-                            });
-                        
-                        return defer.promise;
+                    todos: function(todoService){
+                        return todoService.getTodos();
                     }
                 }
             }).otherwise('/');

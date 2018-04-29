@@ -1,3 +1,3 @@
 module.exports = {
-    MONGODB_URI: 'mongodb://db/TodoDB' 
+    MONGODB_URI: 'mongodb://localhost:27017/TodoDB' 
 }
